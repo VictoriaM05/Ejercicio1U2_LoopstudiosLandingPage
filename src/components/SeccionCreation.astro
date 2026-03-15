@@ -1,0 +1,92 @@
+---
+const tarjetas = [
+  {
+    titulo: 'Deep Earth',
+    imgMovil: '/images/mobile/image-deep-earth.jpg',
+    imgEscritorio: '/images/desktop/image-deep-earth.jpg',
+  },
+
+  {
+    titulo: 'Night Arcade',
+    imgMovil: '/images/mobile/image-night-arcade.jpg',
+    imgEscritorio: '/images/desktop/image-night-arcade.jpg',
+  },
+
+  {
+    titulo: 'Soccer Team VR',
+    imgMovil: '/images/mobile/image-soccer-team.jpg',
+    imgEscritorio: '/images/desktop/image-soccer-team.jpg',
+  },
+
+  {
+    titulo: 'The Grid',
+    imgMovil: '/images/mobile/image-grid.jpg',
+    imgEscritorio: '/images/desktop/image-grid.jpg',
+  },
+
+  {
+    titulo: 'From up above VR',
+    imgMovil: '/images/mobile/image-from-above.jpg',
+    imgEscritorio: '/images/desktop/image-from-above.jpg',
+  },
+
+  {
+    titulo: 'Pocket Borealis',
+    imgMovil: '/images/mobile/image-pocket-borealis.jpg',
+    imgEscritorio: '/images/desktop/image-pocket-borealis.jpg',
+  },
+
+  {
+    titulo: 'The Curiosity',
+    imgMovil: '/images/mobile/image-curiosity.jpg',
+    imgEscritorio: '/images/desktop/image-curiosity.jpg',
+  },
+
+  {
+    titulo: 'Make it Fisheye',
+    imgMovil: '/images/mobile/image-fisheye.jpg',
+    imgEscritorio: '/images/desktop/image-fisheye.jpg',
+  },
+];
+---
+
+<section class="bg-white px-6 py-20 lg:px-8 lg:py-24">
+  <div class="mx-auto max-w-6xl">
+    <!-- titulo y boton se adaptan a movil y a computadora -->
+    <div class="flex flex-col items-center gap-8 lg:flex-row lg:justify-between">
+      <h2 class="font-['Josefin_Sans'] text-3xl uppercase tracking-wide sm:text-4xl">Our creations</h2>
+
+      <button class="font-['Josefin_Sans'] font-bold hidden border border-black px-10 py-2 text-sm uppercase tracking-[0.3em] transition hover:bg-black hover:text-white lg:block">See all</button>
+    </div>
+
+    <!-- grid de las tarjetas -->
+    <div class="mt-12 grid gap-6 lg:mt-20 lg:grid-cols-4">
+      {tarjetas.map((tarjetas) => (
+        /* clase de las tarjetas */
+        <article class="group relative cursor-pointer overflow-hidden">
+          <img
+            src={tarjetas.imgMovil}
+            alt={tarjetas.titulo}
+            class="h-full w-full object-cover lg:hidden"
+          />
+
+          <img
+            src={tarjetas.imgEscritorio}
+            alt={tarjetas.titulo}
+            class="hidden h-full w-full object-cover lg:block"
+          />
+
+          <!-- capa oscura encima de las imagenes para que las letras se vean bien -->
+          <div class="absolute inset-0 bg-black/35 transition group-hover:bg-white/60"></div>
+
+          <!-- titulo de cada tarjeta -->
+          <h3 class="font-['Josefin_Sans'] absolute bottom-5 left-5 max-w-[8rem] text-2xl uppercase leading-none text-white transition group-hover:text-black">{tarjetas.titulo}</h3>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-10 flex justify-center lg:hidden">
+      <button class="border border-black px-10 py-2 text-sm uppercase tracking-[0.3em]">See all</button>
+    </div>
+  </div>
+</section>

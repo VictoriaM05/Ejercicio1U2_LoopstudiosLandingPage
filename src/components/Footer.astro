@@ -1,0 +1,48 @@
+---
+const links = ['About', 'Careers', 'Events', 'Products', 'Support'];
+
+const linkRedes = [
+  { name: 'Facebook', icon: '/images/icon-facebook.svg', href: '#' },
+  { name: 'Twitter', icon: '/images/icon-twitter.svg', href: '#' },
+  { name: 'Pinterest', icon: '/images/icon-pinterest.svg', href: '#' },
+  { name: 'Instagram', icon: '/images/icon-instagram.svg', href: '#' },
+];
+---
+
+<footer class="bg-black px-6 py-14 text-white lg:px-8 lg:py-11">
+  <div class="mx-auto flex max-w-6xl flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-between">
+    <!-- bloque izquierdo de icono y navegacion -->
+    <div class="flex flex-col items-center lg:items-start">
+      <a href="/" aria-label="Home">
+        <img src="/images/logo.svg" alt="Loopstudios" class="h-6 w-auto" />
+      </a>
+
+      <nav class="mt-8">
+        <ul class="font-['Alata'] flex flex-col items-center gap-4 text-sm lg:flex-row lg:gap-8">
+          {links.map((link) => (
+            <li>
+              <a href="#" class="transition hover:opacity-70">
+                {link}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+
+    <!-- bloque derecho de redes sociales -->
+    <div class="flex flex-col items-center lg:items-end">
+      <div class="flex items-center gap-4">
+        {linkRedes.map((redes) => (
+          <a href={redes.href} aria-label={redes.name} class="transition hover:opacity-70">
+            <img src={redes.icon} alt={redes.name} class="h-6 w-6" />
+          </a>
+        ))}
+      </div>
+
+      <p class="font-['Alata'] mt-4 text-center text-sm text-white/50 lg:text-right">
+        © 2021 Loopstudios. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,36 @@
+<!-- BARRA DE NAVEGACIÓN -->
+
+<!-- 
+absolute (el header se posiciona encima del contenido) 
+top-0 (lo pega hasta arriba de la pagina)
+w-full (ocupa todo el ancho de la pantalla)
+-->
+<header class="absolute top-0 left-0 z-20 w-full">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-10 lg:px-8">
+    <a href="">
+      <img src="/images/logo.svg" class="w-36 lg:w-48" />
+    </a>
+
+<!-- 
+hidden (lo oculta por defecto) 
+lg:block (lo muestra solo en pantallas grandes)
+-->
+    <nav class="hidden lg:block">
+      <ul class="font-['Alata'] flex gap-8 text-sm text-white">
+        <li><a href="#" class="border-b-2 border-transparent pb-1 hover:border-white">About</a></li>
+        <li><a href="#" class="border-b-2 border-transparent pb-1 hover:border-white">Careers</a></li>
+        <li><a href="#" class="border-b-2 border-transparent pb-1 hover:border-white">Events</a></li>
+        <li><a href="#" class="border-b-2 border-transparent pb-1 hover:border-white">Products</a></li>
+        <li><a href="#" class="border-b-2 border-transparent pb-1 hover:border-white">Support</a></li>
+      </ul>
+    </nav>
+
+<!-- 
+oculta el icono del menu en pantallas grandes y lo muestra en movil
+-->
+    <button class="lg:hidden">
+      <img src="/images/icon-hamburger.svg" alt="Menu Icon" />
+    </button>
+  </div>
+</header>
+

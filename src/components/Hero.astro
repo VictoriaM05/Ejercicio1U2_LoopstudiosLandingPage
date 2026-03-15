@@ -1,0 +1,17 @@
+<!-- SECCIÓN IMAGEN -->
+
+<!-- relative (los elementos con "absolute" dentro se posicionan con respecto a section (elemento padre con posicion "relative"))-->
+<section class="relative min-h-screen">
+    <!-- imagen para celular -->
+  <img src="/images/mobile/image-hero.jpg" class="absolute inset-0 h-full w-full object-cover lg:hidden"/>
+
+  <!-- imagen para computadora -->
+  <img src="/images/desktop/image-hero.jpg" class="absolute inset-0 hidden h-full w-full object-cover lg:block"/>
+
+  <div class="relative z-10 mx-auto flex min-h-screen max-w-6xl items-center px-6 lg:px-8">
+    <!-- caja blanca del texto -->
+    <div class="mt-16 max-w-[650px] border-2 border-white p-6 lg:mt-24 lg:p-10">
+      <h1 class="font-['Josefin_Sans'] text-4xl uppercase leading-none tracking-wide text-white sm:text-5xl lg:text-7xl">Immersive experiences that deliver</h1>
+    </div>
+  </div>
+</section>
